@@ -18,10 +18,9 @@ io.on("connection", (socket) => {
   console.log(socket.id);
   socket.on("message", (message) => {
     console.log(`Received message: ${message}`);
-    socket.emit("message", message);
+    io.emit("notification", message);
   });
 });
-
 
 httpServer.listen(PORT, HOST, () => {
   console.log("Server running on port:", PORT);
