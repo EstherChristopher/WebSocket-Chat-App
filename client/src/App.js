@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
-import LiveNotification from './ChatRoom';
+import LiveNotification from './LiveNotification';
 import "./App.css";
-import ChatRoom from './ChatRoom';
+import ChatRoom from './LiveNotification';
 
 const socket = io('ws://localhost:8080');
 
@@ -31,7 +31,7 @@ function App() {
   return (
     <div>
       <p>Received message: {message}</p>
-      <ChatRoom></ChatRoom>
+      <LiveNotification></LiveNotification>
       <button onClick={handleSend}>Send message</button>
     </div>
   );
